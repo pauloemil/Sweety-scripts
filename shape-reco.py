@@ -7,10 +7,8 @@ img = cv.imread('C:\\Users\\buglow\\Desktop\\shapes.png')   #bringing the photo 
                               # ====> Segmantation | pre-processing <====
 
 
-imgGrey = cv.cvtColor(img, cv.COLOR_BGR2GRAY)#convert to gray scale
-
-_, thrash = cv.threshold(imgGrey, 240, 255, cv.THRESH_BINARY) #convert to black and white (src, sabet, abyad, el method(if > 240 -->put 255)
-
+imgGrey = cv.cvtColor(img, cv.COLOR_BGR2GRAY)                               #convert to gray scale
+_, thrash = cv.threshold(imgGrey, 240, 255, cv.THRESH_BINARY)               #cnvt ->b&w (src, sabet, abyad, el method(if > sabet -->put abyad)
 contours, _ = cv.findContours(thrash, cv.RETR_TREE, cv.CHAIN_APPROX_NONE)
                                                                             # Contours can be explained simply as a
                                                                             # curve joining all the continuous points
@@ -18,20 +16,20 @@ contours, _ = cv.findContours(thrash, cv.RETR_TREE, cv.CHAIN_APPROX_NONE)
 
 #view for clarification
 cv.imshow("Original", img) #give window with the title shapes contain the image
-cv.waitKey(0)            #wait any key
-cv.destroyAllWindows()   #to destroy all after the key :B
+cv.waitKey(0)              #wait any key
+cv.destroyAllWindows()     #to destroy all after the key :B
 
 cv.imshow("GRAY Scale", imgGrey) #give window with the title shapes contain the image
-cv.waitKey(0)            #wait any key
-cv.destroyAllWindows()   #to destroy all after the key :B
+cv.waitKey(0)                    #wait any key
+cv.destroyAllWindows()           #to destroy all after the key :B
 
 
 for contour in contours:
                                 # ====> Do the Job like a boss  <====
 
 
-    epsilon = 0.01*cv.arcLength(contour, True) #calc el epsilon value by kikking el coeff. f el arc-length of countour
-    approx = cv.approxPolyDP(contour, epsilon, True) #extracting points in a 2d array
+    epsilon = 0.01*cv.arcLength(contour, True)               #calc el epsilon value by kikking el coeff. f el arc-length of countour
+    approx = cv.approxPolyDP(contour, epsilon, True)         #extracting points in a 2d array
 
     cv.drawContours(img, [approx], -1, (0, 150, 255), 6)     #draw on src contours with approx points, all, color, thickness
 
@@ -63,10 +61,14 @@ for contour in contours:
         cv.putText(img, "Circle", (x, y), cv.FONT_HERSHEY_COMPLEX, 1, (0, 0, 0))
 
 cv.imshow("Final Result", img) #give window with the title shapes contain the image
-cv.waitKey(0)            #wait any key
-cv.destroyAllWindows()   #to destroy all after the key :B
+cv.waitKey(0)                  #wait any key
+cv.destroyAllWindows()         #to destroy all after the key :B
 #----------------------------|
 #                            |
 # Done on 7:40 10/3/2020     |
-# paulo's Team               |
+# Paulo's Team:              |
+#   Paulo Emil 2             |
+#   Gamal Ashraf Gamal 2     |
+#   Akram Diaa Abaas 2       |
+#   Remon Wagde Marzouk 3    |
 #----------------------------|
