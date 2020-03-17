@@ -35,10 +35,14 @@ def show_tracks(tracks):
 
 def download(playlistID):
     playlist = sp.playlist(playlistID)
+
     for i in playlist['tracks']['items']:
-        song = i['track']['name']
-        artist = i['track']['artists'][0]['name']
-        downloadMP4(song, artist)
+        try:
+            song = i['track']['name']
+            artist = i['track']['artists'][0]['name']
+            downloadMP4(song, artist)
+        except:
+            continue
 
 def convertMP4toMP3():
     mp4list = os.listdir(pathTomp4)
