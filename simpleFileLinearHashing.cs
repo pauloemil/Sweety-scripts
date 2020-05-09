@@ -83,7 +83,7 @@ namespace hashing
                             Console.WriteLine("No place is remaining!");
                         break;
                     case "2":
-
+                        Console.Write("Enter the element: ");
                         if (SearchInFile(Console.ReadLine(), myFileExample))
                             Console.WriteLine("Found!");
                         else
