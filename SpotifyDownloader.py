@@ -11,7 +11,7 @@ pathTomp4 = r"P:\spotifyvids"
 pathTomp3 = r"P:\spotifysongs"
 
 sp = spotipy.Spotify(client_credentials_manager=SpotifyClientCredentials("Client ID", "Client Secret"))
-username = "31jd47pa674y2x333swazribt5za"
+username = "username"
 
 
 
