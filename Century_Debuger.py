@@ -63,5 +63,5 @@ with Listener(on_press=signal_press_to_hotkeys, on_release=signal_release_to_hot
 ##########################
 # Done in Febr 13th
 # Paulo Emil
-# busy.paulo@hotmail.com
+# paulo.busy@hotmail.com
 ##########################
